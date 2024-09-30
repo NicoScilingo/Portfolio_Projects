@@ -3,7 +3,7 @@ layoffs;
 
 -- 1. Remove Duplicates
 -- 2. Standarize the Data
--- 3. Null Valus or Blanc Values (populate or not)
+-- 3. Null Values or Blank Values (populate or not)
 -- 4. Remove unnecesary columns or rows
 
 
