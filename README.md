@@ -1,2 +1,2 @@
-# SQL_Projects
-A collection of my MySQL projects.
+# SQL Data Cleaning Project
+Data Cleaning Project cleaning data from world layoffs dataset.
