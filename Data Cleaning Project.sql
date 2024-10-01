@@ -1,13 +1,19 @@
+-- Steps:
+
+-- 1. Remove Duplicates.
+-- 2. Standarize the Data.
+-- 3. Null Values or Blank Values (populate or not).
+-- 4. Remove unnecesary columns or rows.
+-- 5. Data Visualization Querys
+
+
+
+
 SELECT * from 
 layoffs;
 
--- 1. Remove Duplicates
--- 2. Standarize the Data
--- 3. Null Values or Blank Values (populate or not)
--- 4. Remove unnecesary columns or rows
+-- 0. Do not work on real data, create a staging Data Base to work on. Make sure to import the Dataset by creating a new table with "import wizard"
 
-
--- 0. not work on real data, create a staging DB to work on
 CREATE TABLE layoffs_staging
 LIKE layoffs;
 
@@ -15,7 +21,8 @@ INSERT layoffs_staging
 select * 
 from layoffs;
 
--- 1. removing duplicates
+-- 1. Removing Duplicates
+
 select *, 
 row_number () over (
 PARTITION BY company, industry, total_laid_off, percentage_laid_off, `date`) as row_num
@@ -115,7 +122,7 @@ set `date` = str_to_date(`date`, '%m/%d/%Y');
 alter table layoffs_staging2
 modify column `date` date;
 
--- Populating NULL Blank Valus
+-- 3. Populating NULL and Blank Values
 
 select * from  layoffs_staging2
 where total_laid_off is null
@@ -146,7 +153,7 @@ join layoffs_staging2 t2
 where (t1.industry is null or t1.industry = '')
 and t2.industry is not null;
 
--- the query below didnt work because we didnte change blanks to null
+-- the query below didnt work because we didn't change blanks to null
 
 UPDATE layoffs_staging2 t1
 join layoffs_staging2 t2
@@ -161,7 +168,7 @@ update layoffs_staging2
 set industry = null
 where industry = '';
 
--- Removing unnecessary rows and columns
+-- 4. Removing unnecessary rows and columns
 
 select * from  layoffs_staging2
 where total_laid_off is null
@@ -174,7 +181,7 @@ and percentage_laid_off is null;
 select * from layoffs_staging2;
 
 
-
+-- 5. Data visualization Querys
 
 
 alter table layoffs_staging2 drop column row_num;
