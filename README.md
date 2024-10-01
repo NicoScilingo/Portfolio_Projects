@@ -4,5 +4,5 @@ This repository holds all the different Data Analysis projects I've done in diff
 
 SQL:
 
---Data Cleaning Project: cleaning data from "world layoffs" dataset.
+--Data Cleaning Project + Exploraty Data Analysis: cleaning and epxloring data from "world layoffs" dataset.
 Data Set Link: https://www.kaggle.com/datasets/swaptr/layoffs-2022
