@@ -1,5 +1,6 @@
-# SQL Data Cleaning Project
+# Data Analyst Portfolio Project Repository
 
-Data Cleaning Project: cleaning data from world layoffs dataset.
+SQL:
 
-Data Set: https://www.kaggle.com/datasets/swaptr/layoffs-2022
+--Data Cleaning Project: cleaning data from world layoffs dataset.
+Data Set Link: https://www.kaggle.com/datasets/swaptr/layoffs-2022
