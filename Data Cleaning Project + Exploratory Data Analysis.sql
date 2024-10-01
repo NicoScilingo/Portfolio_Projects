@@ -4,7 +4,7 @@
 -- 2. Standarize the Data.
 -- 3. Null Values or Blank Values (populate or not).
 -- 4. Remove unnecesary columns or rows.
--- 5. Data Visualization Querys
+-- 5. Exploratory Data Analysis
 
 
 
@@ -181,7 +181,7 @@ and percentage_laid_off is null;
 select * from layoffs_staging2;
 
 
--- 5. Data visualization Querys
+-- 5. Exploratory Data Analysis
 
 
 alter table layoffs_staging2 drop column row_num;
