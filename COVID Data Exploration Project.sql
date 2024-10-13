@@ -483,6 +483,7 @@ create view Highest_DeathCount as
 SELECT location, MAX(total_deaths) as Highest_Death_Count
 FROM PortfolioProject..CovidDeaths
 where continent is  null
+and location not in ('World', 'International', 'European Union')
 group by location
 --order by Highest_Death_Count desc;
 
@@ -528,3 +529,21 @@ SELECT
 FROM PortfolioProject..CovidDeaths
 WHERE Location = 'Argentina'
 --ORDER BY 1, 2;
+
+
+-- Total Cases VS Population
+
+create view Percentege_Of_Population_Infected as
+Select Location, Population, MAX(total_cases) as HighestInfectionCount,  CAST(MAX(total_cases) AS FLOAT) / NULLIF(Population, 0)*100 as PercentPopulationInfected
+From PortfolioProject..CovidDeaths
+Group by Location, Population 
+--order by PercentPopulationInfected desc
+
+
+-- Total Cases VS Population per Date
+
+create view Percentege_Of_Population_Infected_per_Date as
+Select Location, Population, date, MAX(total_cases) as HighestInfectionCount,  CAST(MAX(total_cases) AS FLOAT) / NULLIF(Population, 0)*100 as PercentPopulationInfected
+From PortfolioProject..CovidDeaths
+Group by Location, Population, date 
+--order by PercentPopulationInfected desc
