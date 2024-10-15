@@ -1,6 +1,6 @@
 # Data Analyst Portfolio Project Repository
 
-This repository holds all the different Data Analysis projects I've done in different tools.
+This repository holds all the different Data Analysis projects (and it's various datasets) I've done in different tools.
 
 Find here my Tableau Projects as well:
 
