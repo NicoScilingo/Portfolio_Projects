@@ -1,3 +1,5 @@
+--Doing this project in MySQL
+
 SELECT * 
 FROM nashville_housing;
 
