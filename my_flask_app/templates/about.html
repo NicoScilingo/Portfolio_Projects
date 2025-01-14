@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Acerca de esta Aplicación</h1>
+        <nav>
+            <a href="/">Inicio</a> | 
+            <a href="/about">Acerca de</a> | 
+            <a href="/api/data">Datos API</a>
+        </nav>
+    </header>
+    <main>
+        <h2>¿Qué es Flask?</h2>
+        <p>Flask es un micro-framework para Python que permite crear aplicaciones web de manera sencilla.</p>
+    </main>
+    <footer>
+        <p>© 2025 Mi Aplicación Flask</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
